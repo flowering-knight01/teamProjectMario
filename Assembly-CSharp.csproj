@@ -36,7 +36,8 @@
     <ImplicitlyExpandDesignTimeFacades>false</ImplicitlyExpandDesignTimeFacades>
   </PropertyGroup>
   <ItemGroup>
-     <Compile Include="Assets\Test\PlayerController.cs" />
+     <Compile Include="Assets\Scripts\PlayerController.cs" />
+     <Compile Include="Assets\Scripts\CameraScript.cs" />
     <Reference Include="UnityEngine">
         <HintPath>C:/Program Files/Unity/Hub/Editor/2020.3.16f1/Editor/Data/Managed/UnityEngine/UnityEngine.dll</HintPath>
     </Reference>
@@ -669,6 +670,12 @@
     </Reference>
     <Reference Include="Unity.2D.IK.Runtime">
         <HintPath>C:/Users/mikey/OneDrive/Desktop/MarioProject/Mario3Clone/Library/ScriptAssemblies/Unity.2D.IK.Runtime.dll</HintPath>
+    </Reference>
+    <Reference Include="Cinemachine">
+        <HintPath>C:/Users/mikey/OneDrive/Desktop/MarioProject/Mario3Clone/Library/ScriptAssemblies/Cinemachine.dll</HintPath>
+    </Reference>
+    <Reference Include="com.unity.cinemachine.editor">
+        <HintPath>C:/Users/mikey/OneDrive/Desktop/MarioProject/Mario3Clone/Library/ScriptAssemblies/com.unity.cinemachine.editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.2D.Animation.Triangle.Runtime">
         <HintPath>C:/Users/mikey/OneDrive/Desktop/MarioProject/Mario3Clone/Library/ScriptAssemblies/Unity.2D.Animation.Triangle.Runtime.dll</HintPath>
