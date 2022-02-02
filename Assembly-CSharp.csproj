@@ -37,8 +37,11 @@
   </PropertyGroup>
   <ItemGroup>
      <Compile Include="Assets\Test\CameraScript.cs" />
-     <Compile Include="Assets\Scripts\PlayerController.cs" />
      <Compile Include="Assets\Scripts\MainMenu.cs" />
+     <Compile Include="Assets\Scripts\PlayerController.cs" />
+     <Compile Include="Assets\Scripts\DeathBoxScript.cs" />
+     <Compile Include="Assets\Scripts\Pickups.cs" />
+     <Compile Include="Assets\Scripts\Victory.cs" />
      <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />
      <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF-Mobile Overlay.shader" />
      <None Include="Assets\TextMesh Pro\Shaders\TMP_Bitmap.shader" />

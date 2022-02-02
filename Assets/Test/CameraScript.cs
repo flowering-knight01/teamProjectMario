@@ -4,7 +4,12 @@ using UnityEngine;
 
 public class CameraScript : MonoBehaviour
 {
- public float speed = 2;
+ public static float speed = 2;
+ 
+ void Start()
+ {
+     speed = 2;
+ }
     void FixedUpdate()
      {
         if (Time.deltaTime < 90)
