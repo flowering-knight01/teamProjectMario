@@ -5,14 +5,13 @@ using UnityEngine;
 public class EnemyController : MonoBehaviour
 {
     public float speed;
-    private Vector2 velocity;
     private int forwards = 1;
     
 
     // Start is called before the first frame update
     void Start()
     {
-        velocity = new Vector2(1.75f, 1.1f);
+        
     }
 
     // Update is called once per frame

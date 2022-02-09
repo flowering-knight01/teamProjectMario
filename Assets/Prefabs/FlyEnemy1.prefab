@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 1671404367230299636}
   - component: {fileID: -6863492745832309713}
   - component: {fileID: -6482990111762877261}
+  - component: {fileID: 2970807381114906539}
   m_Layer: 9
   m_Name: FlyEnemy1
   m_TagString: Untagged
@@ -131,3 +132,17 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1, y: 2}
   m_EdgeRadius: 0
+--- !u!114 &2970807381114906539
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1671404367230299643}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3d4e3877af64a724d96974d43bbf2cd1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speed: 0.02
+  isJumping: 0

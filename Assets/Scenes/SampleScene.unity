@@ -137,7 +137,7 @@ GameObject:
   - component: {fileID: 24118654}
   m_Layer: 8
   m_Name: Floor (2)
-  m_TagString: Untagged
+  m_TagString: floor
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -660,7 +660,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 9118319016280614460, guid: c58ddeb0efc6929448ea2c761dfc304b, type: 3}
       propertyPath: speed
-      value: 0.003
+      value: 0.03
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c58ddeb0efc6929448ea2c761dfc304b, type: 3}
@@ -683,7 +683,7 @@ GameObject:
   - component: {fileID: 210801829}
   m_Layer: 8
   m_Name: Floor (9)
-  m_TagString: Untagged
+  m_TagString: floor
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1215,7 +1215,7 @@ GameObject:
   - component: {fileID: 358471544}
   m_Layer: 8
   m_Name: Floor
-  m_TagString: Untagged
+  m_TagString: floor
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1330,7 +1330,7 @@ GameObject:
   - component: {fileID: 433740357}
   m_Layer: 8
   m_Name: Floor (7)
-  m_TagString: Untagged
+  m_TagString: floor
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1458,7 +1458,7 @@ GameObject:
   - component: {fileID: 459279823}
   m_Layer: 8
   m_Name: Floor (7)
-  m_TagString: Untagged
+  m_TagString: floor
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2043,7 +2043,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 9118319016280614460, guid: c58ddeb0efc6929448ea2c761dfc304b, type: 3}
       propertyPath: speed
-      value: 0.003
+      value: 0.03
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c58ddeb0efc6929448ea2c761dfc304b, type: 3}
@@ -2427,7 +2427,7 @@ GameObject:
   - component: {fileID: 915296455}
   m_Layer: 8
   m_Name: Floor (9)
-  m_TagString: Untagged
+  m_TagString: floor
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2977,7 +2977,7 @@ GameObject:
   - component: {fileID: 1083293060}
   m_Layer: 8
   m_Name: Floor (4)
-  m_TagString: Untagged
+  m_TagString: platform
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3149,7 +3149,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 9118319016280614460, guid: c58ddeb0efc6929448ea2c761dfc304b, type: 3}
       propertyPath: speed
-      value: 0.003
+      value: 0.03
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c58ddeb0efc6929448ea2c761dfc304b, type: 3}
@@ -3172,7 +3172,7 @@ GameObject:
   - component: {fileID: 1151736305}
   m_Layer: 8
   m_Name: Floor (10)
-  m_TagString: Untagged
+  m_TagString: floor
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3301,7 +3301,7 @@ GameObject:
   - component: {fileID: 1151759116}
   m_Layer: 8
   m_Name: Floor (8)
-  m_TagString: Untagged
+  m_TagString: floor
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3492,7 +3492,7 @@ GameObject:
   - component: {fileID: 1192578665}
   m_Layer: 8
   m_Name: Platform 1
-  m_TagString: Untagged
+  m_TagString: floor
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3626,7 +3626,7 @@ GameObject:
   - component: {fileID: 1222174149}
   m_Layer: 8
   m_Name: Floor (5)
-  m_TagString: Untagged
+  m_TagString: platform
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3925,7 +3925,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 9118319016280614460, guid: c58ddeb0efc6929448ea2c761dfc304b, type: 3}
       propertyPath: speed
-      value: 0.003
+      value: 0.03
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c58ddeb0efc6929448ea2c761dfc304b, type: 3}
@@ -3947,7 +3947,7 @@ GameObject:
   - component: {fileID: 1300560156}
   m_Layer: 8
   m_Name: Floor (1)
-  m_TagString: Untagged
+  m_TagString: floor
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -4136,7 +4136,7 @@ GameObject:
   - component: {fileID: 1326354268}
   m_Layer: 8
   m_Name: Floor (6)
-  m_TagString: Untagged
+  m_TagString: platform
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -4493,7 +4493,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 9118319016280614460, guid: c58ddeb0efc6929448ea2c761dfc304b, type: 3}
       propertyPath: speed
-      value: 0.003
+      value: 0.03
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c58ddeb0efc6929448ea2c761dfc304b, type: 3}
@@ -4677,7 +4677,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 9118319016280614460, guid: c58ddeb0efc6929448ea2c761dfc304b, type: 3}
       propertyPath: speed
-      value: 0.003
+      value: 0.03
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c58ddeb0efc6929448ea2c761dfc304b, type: 3}
@@ -4939,7 +4939,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 9118319016280614460, guid: c58ddeb0efc6929448ea2c761dfc304b, type: 3}
       propertyPath: speed
-      value: 0.003
+      value: 0.03
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c58ddeb0efc6929448ea2c761dfc304b, type: 3}
@@ -4962,7 +4962,7 @@ GameObject:
   - component: {fileID: 1543114203}
   m_Layer: 8
   m_Name: Floor (13)
-  m_TagString: Untagged
+  m_TagString: floor
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -5091,7 +5091,7 @@ GameObject:
   - component: {fileID: 1548958969}
   m_Layer: 8
   m_Name: Floor (11)
-  m_TagString: Untagged
+  m_TagString: floor
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -5705,7 +5705,7 @@ GameObject:
   - component: {fileID: 1747335699}
   m_Layer: 8
   m_Name: Floor (10)
-  m_TagString: Untagged
+  m_TagString: floor
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -5819,7 +5819,7 @@ GameObject:
   - component: {fileID: 1884503125}
   m_Layer: 8
   m_Name: Floor (8)
-  m_TagString: Untagged
+  m_TagString: floor
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -5929,7 +5929,7 @@ GameObject:
   - component: {fileID: 1909975066}
   m_Layer: 8
   m_Name: Floor (3)
-  m_TagString: Untagged
+  m_TagString: platform
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -6119,7 +6119,7 @@ GameObject:
   - component: {fileID: 1963381928}
   m_Layer: 8
   m_Name: Floor (11)
-  m_TagString: Untagged
+  m_TagString: floor
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -6397,7 +6397,7 @@ GameObject:
   - component: {fileID: 2116970388}
   m_Layer: 8
   m_Name: Floor (12)
-  m_TagString: Untagged
+  m_TagString: floor
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -6653,7 +6653,7 @@ GameObject:
   - component: {fileID: 2136179885}
   m_Layer: 8
   m_Name: Floor (12)
-  m_TagString: Untagged
+  m_TagString: floor
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -6906,6 +6906,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: FlyEnemy1
       objectReference: {fileID: 0}
+    - target: {fileID: 2970807381114906539, guid: 0670fd7ce04469144894a06e81210f57, type: 3}
+      propertyPath: speed
+      value: 0.03
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0670fd7ce04469144894a06e81210f57, type: 3}
 --- !u!1001 &3135158473193347835
@@ -7022,7 +7026,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 9118319016280614460, guid: c58ddeb0efc6929448ea2c761dfc304b, type: 3}
       propertyPath: speed
-      value: 0.003
+      value: 0.03
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c58ddeb0efc6929448ea2c761dfc304b, type: 3}

@@ -44,6 +44,9 @@ public class PlayerController : MonoBehaviour
     {
         rd2d = GetComponent<Rigidbody2D>();
         cameraTarget.SetActive(true);
+
+        //making sure the game doesn't go too far
+        Application.targetFrameRate = 60;
     }
 
 void FixedUpdate()
@@ -91,6 +94,8 @@ void FixedUpdate()
         //audioSource.PlayOneShot(scoreIncrease);
         DeathBoxScript death = other.gameObject.GetComponent<DeathBoxScript>();
 
+        Victory win = other.gameObject.GetComponent<Victory>();
+
         if (death != null)
         {
             death.deathCheck = true;
@@ -100,8 +105,6 @@ void FixedUpdate()
             lives-= 1;
             CameraScript.speed = 0;
         }
-
-        Victory win = other.gameObject.GetComponent<Victory>();
 
         if (win != null)
         {
@@ -116,4 +119,23 @@ void FixedUpdate()
         //if collider.tag = enemy lives = lives-1;
     }
 
+    private void OnCollisionEnter2D(Collision2D other)
+    {
+        if(other.gameObject.tag == "enemy")
+        {
+            Debug.Log("from player: hit enemy");
+        }
+    }
+
+    /*
+    private void die()
+    {
+        
+    }
+
+    private void win()
+    {
+        
+    }
+    */
 }
