@@ -39,11 +39,21 @@ public class PlayerController : MonoBehaviour
     public GameObject deathBox;
 
     public GameObject cameraTarget;
+
+     AudioSource audioSource;
+
+    public AudioClip music;
+
+    public AudioClip scoreIncrease;
     // Start is called before the first frame update
     void Start()
     {
         rd2d = GetComponent<Rigidbody2D>();
+        audioSource = GetComponent<AudioSource>();
         cameraTarget.SetActive(true);
+        audioSource.clip = music;
+        audioSource.loop = true;
+        audioSource.Play();
     }
 
 void FixedUpdate()
@@ -88,7 +98,12 @@ void FixedUpdate()
     }
     private void OnTriggerEnter2D(Collider2D other)
     {
-        //audioSource.PlayOneShot(scoreIncrease);
+        Pickups coin = other.gameObject.GetComponent<Pickups>();
+        if (coin != null)
+        {
+            audioSource.PlayOneShot(scoreIncrease);
+            scoreValue += 1;
+        }
      DeathBoxScript death = other.gameObject.GetComponent<DeathBoxScript>();
 
         if (death != null)
@@ -105,12 +120,9 @@ void FixedUpdate()
          if (win != null)
          {
              win.winCheck = true;
+             speed = 0;
+            jumpForce = 0;
+            CameraScript.speed = 0;
          }
-
-        if (death == null && win == null)
-        {
-                scoreValue += 1;
-        }
     }
-
 }
