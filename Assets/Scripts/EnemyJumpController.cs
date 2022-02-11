@@ -4,12 +4,11 @@ using UnityEngine;
 
 public class EnemyJumpController : MonoBehaviour
 {
-    public float speed;
+    private float speed = 0.03f;
     private int forwards = 1;
 
     //for counting the small jumps before big jump
     public int isJumping = 0;
-    //public int inAir = 1;
 
     // Start is called before the first frame update
     void Start()
@@ -24,22 +23,16 @@ public class EnemyJumpController : MonoBehaviour
         {
             transform.position = new Vector2(transform.position.x-speed, transform.position.y);
 
-            
             if(isJumping < 3)
             {
-                //inAir == 1
                 transform.position = new Vector2(transform.position.x, transform.position.y+(speed*2));
-                //isJumping += 1;
-                //inAir = inAir*-1;
-                Debug.Log(isJumping + " currently jumping");
+                //Debug.Log(isJumping + " currently jumping");
             }
             else if(isJumping >= 3)
             {
-                //&& inAir == 1
-                transform.position = new Vector2(transform.position.x, transform.position.y+(speed*15));
-                Debug.Log("big jump");
+                transform.position = new Vector2(transform.position.x, transform.position.y+(speed*5));
+                //Debug.Log("big jump");
                 isJumping = 0;
-                //inAir = inAir*-1;
             }
         }
         else
@@ -48,19 +41,14 @@ public class EnemyJumpController : MonoBehaviour
 
             if(isJumping < 3)
             {
-                //inAir == 1
                 transform.position = new Vector2(transform.position.x, transform.position.y+(speed*2));
-                //isJumping += 1;
-                //inAir = inAir*-1;
-                Debug.Log(isJumping + " currently jumping");
+                //Debug.Log(isJumping + " currently jumping");
             }
             else if(isJumping >= 3)
             {
-                //&& inAir == 1
-                transform.position = new Vector2(transform.position.x, transform.position.y+(speed*15));
-                Debug.Log("big jump");
+                transform.position = new Vector2(transform.position.x, transform.position.y+(speed*5));
+                //Debug.Log("big jump");
                 isJumping = 0;
-                //inAir = inAir*-1;
             }
         }
 
@@ -68,7 +56,7 @@ public class EnemyJumpController : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D other)
     {
-        //Check to see if the tag on the collider is equal to Enemy
+        //Check to see if the tag on the collider is the one being looked for
         if (other.gameObject.tag == "wall")
         {
             forwards = forwards*-1;
@@ -81,7 +69,6 @@ public class EnemyJumpController : MonoBehaviour
         
         if(other.gameObject.tag == "floor")
         {
-            //inAir = inAir*-1;
             isJumping += 1;
         }
         

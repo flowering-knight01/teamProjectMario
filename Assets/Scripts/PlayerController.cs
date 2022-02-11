@@ -22,6 +22,10 @@ public class PlayerController : MonoBehaviour
 
     public LayerMask groundCheck;
 
+    public GameObject enemyHead;
+
+    public bool enemyCheck;
+
     private float jumpCounter;
     public float jumpTime;
     private bool isJumping;
@@ -39,11 +43,22 @@ public class PlayerController : MonoBehaviour
     public GameObject deathBox;
 
     public GameObject cameraTarget;
+
+    AudioSource audioSource;
+
+    public AudioClip music;
+
+    public AudioClip scoreIncrease;
+	
     // Start is called before the first frame update
     void Start()
     {
         rd2d = GetComponent<Rigidbody2D>();
+        audioSource = GetComponent<AudioSource>();
         cameraTarget.SetActive(true);
+        audioSource.clip = music;
+        audioSource.loop = true;
+        audioSource.Play();
 
         //making sure the game doesn't go too far
         Application.targetFrameRate = 60;
@@ -67,31 +82,40 @@ void FixedUpdate()
             jumpCounter = jumpTime;
             rd2d.velocity = Vector2.up * jumpForce;
         }
+
         if (Input.GetKeyDown("escape"))
         {
             Application.Quit();
         }
-            if(Input.GetKey(KeyCode.W))
+
+        if(Input.GetKey(KeyCode.W))
+        {
+            if(jumpCounter > 0 && isJumping == true)
             {
-                if(jumpCounter > 0 && isJumping == true)
-                {
-                    rd2d.velocity = Vector2.up * jumpForce;
-                    jumpCounter -= Time.deltaTime;
-                }
-                else
-                {
-                    isJumping = false;
-                }
+                rd2d.velocity = Vector2.up * jumpForce;
+                jumpCounter -= Time.deltaTime;
             }
+            else
+            {
+                isJumping = false;
+            }
+        }
 
         if(Input.GetKeyUp(KeyCode.W))
         {
             isJumping = false;
         }
     }
+    
     private void OnTriggerEnter2D(Collider2D other)
     {
-        //audioSource.PlayOneShot(scoreIncrease);
+        Pickups coin = other.gameObject.GetComponent<Pickups>();
+        if (coin != null)
+        {
+            audioSource.PlayOneShot(scoreIncrease);
+            scoreValue += 1;
+        }
+		
         DeathBoxScript death = other.gameObject.GetComponent<DeathBoxScript>();
 
         Victory win = other.gameObject.GetComponent<Victory>();
@@ -109,6 +133,9 @@ void FixedUpdate()
         if (win != null)
         {
             win.winCheck = true;
+			speed = 0;
+            jumpForce = 0;
+            CameraScript.speed = 0;
         }
 
         if (death == null && win == null)
@@ -121,21 +148,16 @@ void FixedUpdate()
 
     private void OnCollisionEnter2D(Collision2D other)
     {
+        if(other.gameObject.tag == "enemyHead")
+        {
+            Debug.Log("from player: hit enemyHead");
+            audioSource.PlayOneShot(scoreIncrease);
+            scoreValue += 1;
+        }
+
         if(other.gameObject.tag == "enemy")
         {
             Debug.Log("from player: hit enemy");
         }
     }
-
-    /*
-    private void die()
-    {
-        
-    }
-
-    private void win()
-    {
-        
-    }
-    */
 }
