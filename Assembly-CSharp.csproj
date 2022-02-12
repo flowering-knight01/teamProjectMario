@@ -42,14 +42,15 @@
      <Compile Include="Assets\Scripts\globalTimer.cs" />
      <Compile Include="Assets\Scripts\MainMenu.cs" />
      <Compile Include="Assets\Scripts\EnemyJump2.cs" />
+     <Compile Include="Assets\Scripts\enemyDeath.cs" />
      <Compile Include="Assets\Scripts\Pickups.cs" />
      <Compile Include="Assets\Scripts\bulletSpeed.cs" />
      <Compile Include="Assets\Scripts\cannonFire.cs" />
      <Compile Include="Assets\Scripts\EnemyController.cs" />
+     <Compile Include="Assets\Scripts\transformScr.cs" />
      <Compile Include="Assets\Scripts\PlayerController.cs" />
      <Compile Include="Assets\Scripts\DeathBoxScript.cs" />
-     <Compile Include="Assets\Scripts\enemyDeath.cs" />
-     <Compile Include="Assets\Scripts\transformScr.cs" />
+     <Compile Include="Assets\Scripts\itemBox.cs" />
      <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />
      <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF-Mobile Overlay.shader" />
      <None Include="Assets\TextMesh Pro\Shaders\TMP_Bitmap.shader" />

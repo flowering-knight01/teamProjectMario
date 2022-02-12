@@ -44,11 +44,23 @@ public class PlayerController : MonoBehaviour
 
     public GameObject cameraTarget;
 
+    public GameObject timeText;
+
     AudioSource audioSource;
 
     public AudioClip music;
 
     public AudioClip scoreIncrease;
+
+    private float timeStart = 300.0f;
+
+    private float timeLeft;
+
+    private string timeSrting;
+
+    private bool flightPow = false;
+
+    private bool timeStop = true;
 	
     // Start is called before the first frame update
     void Start()
@@ -72,6 +84,7 @@ void FixedUpdate()
     rd2d.velocity = new Vector2(getInput * speed, rd2d.velocity.y);
     scoreText.GetComponent<Text>().text = "Coins: " + scoreValue;
     lifeText.GetComponent<Text>().text = "Lives: " + lives;
+    timeText.GetComponent<Text>().text = "Time Left: " + timeLeft;
 }
     // Update is called once per frame
     void Update()
@@ -107,6 +120,12 @@ void FixedUpdate()
         {
             isJumping = false;
         }
+
+        if(timeStop == true)
+        {
+            timeLeft = timeStart -= Time.deltaTime;
+            timeSrting = timeLeft.ToString();
+        }
     }
     
     private void OnTriggerEnter2D(Collider2D other)
@@ -136,6 +155,8 @@ void FixedUpdate()
 
             Vector3 movement = new Vector3(Random.Range(40, 70), Random.Range(-40, 40), 0f);
             transform.position += movement * Time.deltaTime;
+
+            timeStop = false;
         }
 
         if (win != null)
@@ -144,12 +165,15 @@ void FixedUpdate()
 			speed = 0;
             jumpForce = 0;
             CameraScript.speed = 0;
+            timeStop = false;
         }
 
+        /*
         if (death == null && win == null)
         {
             scoreValue += 1;
         }
+        */
     }
 
     private void OnCollisionEnter2D(Collision2D other)
@@ -157,7 +181,18 @@ void FixedUpdate()
         if(other.gameObject.tag == "enemy")
         {
             Debug.Log("from player: hit enemy");
-            
         }
+
+        if(other.gameObject.tag == "powerUp1")
+        {
+            Debug.Log("from player: power up hit");
+            powerUp();
+            Destroy(other.gameObject);
+        }
+    }
+
+    private void powerUp()
+    {
+        Debug.Log("powerUp enabled");
     }
 }
