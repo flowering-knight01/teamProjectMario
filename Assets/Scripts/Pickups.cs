@@ -4,8 +4,8 @@ using UnityEngine;
 
 public class Pickups : MonoBehaviour
 {
-void OnTriggerEnter2D(Collider2D other)
-{
-    Destroy(gameObject);
-}
+    void OnTriggerEnter2D(Collider2D other)
+    {
+        Destroy(gameObject);
+    }
 }

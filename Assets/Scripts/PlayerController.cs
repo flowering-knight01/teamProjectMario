@@ -60,6 +60,8 @@ public class PlayerController : MonoBehaviour
         audioSource.loop = true;
         audioSource.Play();
 
+        GetComponent<Collider2D>().enabled = true;
+
         //making sure the game doesn't go too far
         Application.targetFrameRate = 60;
     }
@@ -128,6 +130,12 @@ void FixedUpdate()
             Destroy(cameraTarget);
             lives-= 1;
             CameraScript.speed = 0;
+            GetComponent<Collider2D>().enabled = false;
+
+            GetComponent<SpriteRenderer>().flipY = true;
+
+            Vector3 movement = new Vector3(Random.Range(40, 70), Random.Range(-40, 40), 0f);
+            transform.position += movement * Time.deltaTime;
         }
 
         if (win != null)
@@ -142,22 +150,14 @@ void FixedUpdate()
         {
             scoreValue += 1;
         }
-
-        //if collider.tag = enemy lives = lives-1;
     }
 
     private void OnCollisionEnter2D(Collision2D other)
     {
-        if(other.gameObject.tag == "enemyHead")
-        {
-            Debug.Log("from player: hit enemyHead");
-            audioSource.PlayOneShot(scoreIncrease);
-            scoreValue += 1;
-        }
-
         if(other.gameObject.tag == "enemy")
         {
             Debug.Log("from player: hit enemy");
+            
         }
     }
 }

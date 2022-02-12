@@ -16,16 +16,16 @@ public bool deathCheck = false;
     // Update is called once per frame
     void Update()
     {
-
         if (deathCheck == true)
         {
             StartCoroutine(Death());
-        //GameOverScript.loseCheck = true;
+            //GameOverScript.loseCheck = true;
         }
     }
-            IEnumerator Death()
+
+    IEnumerator Death()
     {
-         yield return new WaitForSeconds(2);
-         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+        yield return new WaitForSeconds(2);
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
 }

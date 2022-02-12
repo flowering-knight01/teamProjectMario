@@ -10,12 +10,6 @@ public class EnemyJump2 : MonoBehaviour
     //for counting the small jumps before big jump
     public int isJumping = 0;
 
-    // Start is called before the first frame update
-    void Start()
-    {
-
-    }
-
     // Update is called once per frame
     void FixedUpdate()
     {
@@ -68,6 +62,14 @@ public class EnemyJump2 : MonoBehaviour
         }
 
         if (other.gameObject.tag == "dBox")
+        {
+            Destroy(gameObject);
+        }
+    }
+
+    private void OnTriggerEnter2D(Collider2D other2)
+    {
+        if (other2.gameObject.tag == "deathBox")
         {
             Destroy(gameObject);
         }
