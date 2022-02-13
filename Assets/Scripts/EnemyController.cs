@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class EnemyController : MonoBehaviour
 {
-    private float speed = 0.003f;
+    private float speed = 0.03f;
     private int forwards = 1;
     
 
