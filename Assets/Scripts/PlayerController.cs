@@ -56,16 +56,17 @@ public class PlayerController : MonoBehaviour
 
     private float timeLeft;
 
-    private string timeSrting;
+    private string timeString;
 
     private bool flightPow = false;
 
     private bool timeStop = true;
 
-    private float dashLimit = 3.0f;
     private float untilDash = 0.0f;
 
-    private bool dashing = false;
+    private float powTimer = 30.0f;
+
+    private bool hasPower = false;
 	
     // Start is called before the first frame update
     void Start()
@@ -86,7 +87,9 @@ public class PlayerController : MonoBehaviour
 void FixedUpdate()
 {
     getInput = Input.GetAxisRaw("Horizontal");
+
     rd2d.velocity = new Vector2(getInput * speed, rd2d.velocity.y);
+
     scoreText.GetComponent<Text>().text = "Coins: " + scoreValue;
     lifeText.GetComponent<Text>().text = "Lives: " + lives;
     timeText.GetComponent<Text>().text = "Time Left: " + timeLeft;
@@ -129,28 +132,42 @@ void FixedUpdate()
         if(timeStop == true)
         {
             timeLeft = timeStart -= Time.deltaTime;
-            timeSrting = timeLeft.ToString();
+            timeString = timeLeft.ToString();
         }
         
         if(Input.GetKey(KeyCode.LeftShift))
         {
-            speed = 11;
+            speed = 8;
+
             //start timer
             untilDash += Time.deltaTime;
             //Debug.Log(untilDash);
         }
-        else
+
+        if(Input.GetKeyUp(KeyCode.LeftShift))
         {
-            speed = 6.5f;
             untilDash = 0.0f;
+
+            speed = 6.5f;
         }
 
-        if(rd2d.velocity.x == 11 && (untilDash >= 3.0f))
+        if(flightPow)
         {
-            Debug.Log("speed is 11");
-            Debug.Log("dashing");
+            powTimer -= Time.deltaTime;
+            Debug.Log(powTimer);
+        }
+
+        if(rd2d.velocity.x == 8 && (untilDash >= 2.5f))
+        {
+            //Debug.Log("speed is 10");
+            //Debug.Log("dashing");
             
-            //insert multiple jumps here
+            //flight, but it only works when moving right
+            //something to do with the velocity
+            if(Input.GetKey(KeyCode.W) && flightPow == true && powTimer > 0.0f)
+            {
+                rd2d.velocity = Vector2.up * jumpForce;
+            }
         }
     }
     
@@ -179,9 +196,11 @@ void FixedUpdate()
 
             GetComponent<SpriteRenderer>().flipY = true;
 
+            //death movement
             Vector3 movement = new Vector3(Random.Range(40, 70), Random.Range(-40, 40), 0f);
             transform.position += movement * Time.deltaTime;
 
+            //stops the timer when dead
             timeStop = false;
         }
 
@@ -191,6 +210,8 @@ void FixedUpdate()
 			speed = 0;
             jumpForce = 0;
             CameraScript.speed = 0;
+
+            //stops the timer when win
             timeStop = false;
         }
     }
@@ -206,7 +227,9 @@ void FixedUpdate()
         {
             Debug.Log("from player: power up hit");
 
-            flightPow = true;
+            hasPower = true;
+
+            powTimer = 30.0f;
 
             powerUp();
             Destroy(other.gameObject);
@@ -221,7 +244,16 @@ void FixedUpdate()
 
     private void powerUp()
     {
+        if(hasPower == true)
+        {
+            flightPow = true;
+            Debug.Log("powerUp enabled");
+        }
         
-        Debug.Log("powerUp enabled");
+        if(powTimer <= 0.0f)
+        {
+            hasPower = false;
+            flightPow = false;
+        }
     }
 }
