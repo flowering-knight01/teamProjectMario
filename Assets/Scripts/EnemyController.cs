@@ -6,13 +6,6 @@ public class EnemyController : MonoBehaviour
 {
     private float speed = 0.03f;
     private int forwards = 1;
-    
-
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
 
     // Update is called once per frame
     void Update()
@@ -36,9 +29,11 @@ public class EnemyController : MonoBehaviour
             forwards = forwards*-1;
             Debug.Log("hit wall");
         }
+        
         if (other.gameObject.tag == "Player")
         {
             Debug.Log("hit player");
+            forwards = forwards*-1;
         }
     }
 }

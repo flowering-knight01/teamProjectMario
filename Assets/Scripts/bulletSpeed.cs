@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class bulletSpeed : MonoBehaviour
 {
-
     public float speed;
     Rigidbody2D rb;
 
@@ -18,12 +17,16 @@ public class bulletSpeed : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        Destroy(gameObject, 5.0f);
+        Destroy(gameObject, 4.0f);
     }
 
     public void OnCollisionEnter2D(Collision2D other)
     {
         if(other.gameObject.tag == "enemy")
+        {
+            Destroy(gameObject);
+        }
+        if(other.gameObject.tag == "Player")
         {
             Destroy(gameObject);
         }

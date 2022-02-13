@@ -10,12 +10,6 @@ public class EnemyJumpController : MonoBehaviour
     //for counting the small jumps before big jump
     public int isJumping = 0;
 
-    // Start is called before the first frame update
-    void Start()
-    {
-
-    }
-
     // Update is called once per frame
     void FixedUpdate()
     {
@@ -51,7 +45,6 @@ public class EnemyJumpController : MonoBehaviour
                 isJumping = 0;
             }
         }
-
     }
 
     private void OnCollisionEnter2D(Collision2D other)
@@ -62,8 +55,10 @@ public class EnemyJumpController : MonoBehaviour
             forwards = forwards*-1;
             Debug.Log("hit wall");
         }
+        
         if (other.gameObject.tag == "Player")
         {
+            forwards = forwards*-1;
             Debug.Log("hit player");
         }
         

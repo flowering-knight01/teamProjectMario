@@ -5,10 +5,17 @@ using UnityEngine;
 public class cannonFire : MonoBehaviour
 {
 
-    public float shoot;
-    public float untilShoot;
+    private float shoot;
+    private float untilShoot;
     public GameObject cannonball;
     public Transform firePoint;
+
+
+    void Start()
+    {
+        shoot = Random.Range(3.0f, 3.5f);
+        untilShoot = shoot;
+    }
 
     // Update is called once per frame
     void Update()

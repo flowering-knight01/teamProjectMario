@@ -96,8 +96,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6540a71c2c53cb740a915f1027fea332, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  shoot: 2
-  untilShoot: 2
+  shoot: 3
+  untilShoot: 3
   cannonball: {fileID: 6437671598550283939, guid: 7f4f76a451068524382df273ab8a0da3, type: 3}
   firePoint: {fileID: 6394813943629473644}
 --- !u!1 &6394813944440162884
@@ -125,7 +125,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6394813944440162884}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.03, y: 0, z: 0}
+  m_LocalPosition: {x: 0.076, y: -0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 6394813943629473644}

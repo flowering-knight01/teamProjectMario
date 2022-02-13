@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class EnemyJump2 : MonoBehaviour
 {
-    public float speed;
+    private float speed = 0.03f;
     private int forwards = 1;
 
     //for counting the small jumps before big jump
@@ -51,8 +51,10 @@ public class EnemyJump2 : MonoBehaviour
             forwards = forwards*-1;
             Debug.Log("hit wall");
         }
+        
         if (other.gameObject.tag == "Player")
         {
+            forwards = forwards*-1;
             Debug.Log("hit player");
         }
         

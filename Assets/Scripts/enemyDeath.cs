@@ -7,8 +7,6 @@ public class enemyDeath : MonoBehaviour
     //purposefully left as neither public nor private
     GameObject Enemy;
 
-    //public GameObject deathBox;
-
     // Start is called before the first frame update
     void Start()
     {

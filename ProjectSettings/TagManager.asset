@@ -16,6 +16,8 @@ TagManager:
   - enemyDbox
   - powerUp1
   - powerUp2
+  - powerUp3
+  - itemBox
   layers:
   - Default
   - TransparentFX
